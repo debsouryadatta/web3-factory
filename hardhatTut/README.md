@@ -1,6 +1,6 @@
 ### Steps of Dev:
 
--**Installation of Hardhat**
+- **Installation of Hardhat**
 1. Hardhat installation ->
     - Commands - For package.json - npm init -y
     - To install hardhat - `pnpm install --save-dev hardhat`
@@ -10,24 +10,24 @@
 2. Creating 3 folders - contracts, tests, scripts
 3. Importing the "require("@nomiclabs/hardhat-waffle")" in the hardhat.config.js file
 
--**Compilation using Hardhat**
+- **Compilation using Hardhat**
 4. Creating a new file Token.sol in which we will write the contract code to be tested
 
 5. Writing the constructor and the transfer, balanceOf functions in the Token.sol file
 
 6. `npx hardhat compile` to compile the contract
 
--**Testing of smart contract Part-A**
+- **Testing of smart contract Part-A**
 7. Creating a test file token.js, writing the first test function, getSigners() - to get the signers, getContractFactory("Token") - to get an instance of the contract factory, .deploy() - to deploy contract, expect() - to check the output, etc
 
 8. I guess Chai not only supports ES modules so downgrading the version of Chai to 4.4.1, then `npx hardhat test` to run the test
 
 9. Another error arised - test failed, to fix this - `pnpm i @nomicfoundation/hardhat-toolbox`, require("@nomicfoundation/hardhat-toolbox") in the hardhat.config.js file, then `npx hardhat test` to run the test - test passed
 
--**Testing of smart contract Part-B**
+- **Testing of smart contract Part-B**
 10. Creating another test function to test the transfer function, 2 tests passed
 
--**Testing of smart contract Part-C**
+- **Testing of smart contract Part-C**
 11. Understanding the hooks - beforeEach to run before each test, clearing all the code and rewriting the test functions again using the hooks.
   
 12. In the beforeEach hook, we will be deploying the contract and getting the signers
@@ -38,10 +38,10 @@
 
 15. Writing the final test function to check updation of balances after transfers
 
--**Debugging in Hardhat**
+- **Debugging in Hardhat**
 16.  Using JS console.log() to debug inside the solidity code.
 
--**Deploying on Live Network**
+- **Deploying on Live Network**
 17. For testing purpose, hardhat handles the deployment of the contracts in builtin local hardhat network.
 
 18. Creating a new deploy.js in the scripts folder, writing the main() func to deploy the contract on the local network, `npx hardhat run scripts/deploy.js` to run the deploy script on the local network
